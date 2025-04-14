@@ -104,6 +104,12 @@ h3{
     justify-content: center; /* optionnel : centrer si peu de contenu */
     padding: 50px 0; /* pour respirer */
     box-sizing: border-box;
+    text-align: center;
+}
+
+img{
+    width: 310px;
+    margin-top: 25px;
 }
 
 .titre{
