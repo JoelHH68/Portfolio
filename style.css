@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     background-color: #FAF8ED;
@@ -50,6 +54,7 @@ header{
     font-weight: 900;
     color:#D4AF37;
     opacity: 50%;
+    user-select: none;
 }
 
 .ferme{
@@ -60,6 +65,7 @@ header{
     font-weight: 900;
     color:#D4AF37;
     opacity: 50%;
+    user-select: none;
 }
 
 h2{
@@ -93,6 +99,11 @@ h3{
 
 .projets{
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* optionnel : centrer si peu de contenu */
+    padding: 50px 0; /* pour respirer */
+    box-sizing: border-box;
 }
 
 .titre{
@@ -103,6 +114,11 @@ h3{
     padding: 25px;
     margin: 0 100px;
     font-size: 26px;
+    min-width: 800px;
+}
+
+.site, .maquette {
+    margin-bottom: 50px;
 }
 
 
@@ -127,4 +143,59 @@ h3{
 
 .projet:hover {
     transform: translateY(-10px); /* petit effet stylé au hover */
+}
+
+
+.propos{
+    min-height: 100vh;
+    background-color: #0F4279;
+    padding: 0px 150px;
+    color: #FAF8ED;
+}
+
+.titrepropos{
+    font-size: 26px;
+    text-align: center;
+    padding: 25px;
+}
+
+.propos>p{
+    padding-top: 40px;
+}
+
+
+.contact {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    padding: 50px;
+}
+
+
+.liens {
+    display: flex;
+    justify-content: space-between; 
+    gap: 250px; 
+    margin-top: 100px;
+}
+
+.cv {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 4px #D4AF37;
+    border-radius: 25px;
+    padding: 25px;
+    color: #D4AF37;
+    text-decoration: none;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
+footer{
+    text-align: center;
+    background-color: #0F4279;
+    color: #FAF8ED;
+    padding: 22px;
 }
