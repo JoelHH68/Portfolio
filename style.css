@@ -4,7 +4,7 @@ html {
 
 body{
     margin: 0;
-    background-color: #FAF8ED;
+    background-color: #F5F5F5;
 }
 
 header{
@@ -12,7 +12,7 @@ header{
     display: flex;
     padding: 30px;
     justify-content: space-between;
-    color: #FAF8ED;
+    color: #F5F5F5;
     height: 80px; 
     box-sizing: border-box; 
 }
@@ -23,7 +23,7 @@ header{
 }
 
 .menu>div>a{
-    color: #FAF8ED;
+    color: #F5F5F5;
     text-decoration: none;
 }
 
@@ -101,8 +101,8 @@ h3{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* optionnel : centrer si peu de contenu */
-    padding: 50px 0; /* pour respirer */
+    justify-content: center; 
+    padding: 50px 0; 
     box-sizing: border-box;
     text-align: center;
 }
@@ -130,9 +130,9 @@ img{
 
 .cases {
     display: flex;
-    flex-wrap: wrap; /* pour que les cases aillent à la ligne si y’a plus de place */
-    justify-content: center; /* centré propre */
-    gap: 50px; /* écart entre les cases */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 50px; 
     padding: 50px;
 }
 
@@ -140,15 +140,15 @@ img{
     background-color: #3A3B3C;
     border-radius: 25px;
     padding: 25px;
-    color: #FAF8ED;
-    flex: 1 1 300px; /* min 300px, s'étire selon l’espace */
+    color: #F5F5F5;
+    flex: 1 1 300px; 
     max-width: 400px;
     box-sizing: border-box;
     transition: transform 0.3s ease;
 }
 
 .projet:hover {
-    transform: translateY(-10px); /* petit effet stylé au hover */
+    transform: translateY(-10px); 
 }
 
 
@@ -156,7 +156,7 @@ img{
     min-height: 100vh;
     background-color: #0F4279;
     padding: 0px 150px;
-    color: #FAF8ED;
+    color: #F5F5F5;
 }
 
 .titrepropos{
@@ -183,6 +183,11 @@ img{
     justify-content: space-between; 
     gap: 250px; 
     margin-top: 100px;
+    transition: transform 0.3s ease;
+}
+
+.liens>a:hover{
+    transform: translateY(-10px);
 }
 
 .cv {
@@ -198,10 +203,14 @@ img{
     margin-bottom: 100px;
 }
 
+.cv:hover{
+    box-shadow: ;
+}
+
 
 footer{
     text-align: center;
     background-color: #0F4279;
-    color: #FAF8ED;
+    color: #F5F5F5;
     padding: 22px;
 }
