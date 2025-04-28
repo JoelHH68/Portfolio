@@ -94,6 +94,12 @@ h3{
     width: 40px; 
     height: 40px;
     margin: 0 auto;
+    transition: 0.4s;
+}
+
+.rond:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -183,11 +189,11 @@ img{
     justify-content: space-between; 
     gap: 250px; 
     margin-top: 100px;
-    transition: transform 0.3s ease;
+    transition:  0.3s;
 }
 
 .liens>a:hover{
-    transform: translateY(-10px);
+    transform: translateY(-5px);
 }
 
 .cv {
@@ -201,10 +207,12 @@ img{
     text-decoration: none;
     margin-top: 100px;
     margin-bottom: 100px;
+    transition: 0.4s;
 }
 
 .cv:hover{
-    box-shadow: ;
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 
