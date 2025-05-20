@@ -158,22 +158,12 @@ img{
 }
 
 
-.propos{
-    min-height: 100vh;
+.propos > div > div{
     background-color: #0F4279;
-    padding: 0px 150px;
     color: #F5F5F5;
+    
 }
 
-.titrepropos{
-    font-size: 26px;
-    text-align: center;
-    padding: 25px;
-}
-
-.propos>p{
-    padding-top: 40px;
-}
 
 
 .contact {
