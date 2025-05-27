@@ -2,6 +2,17 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
+/* .merriweather-<uniquifier> {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
+
 body{
     margin: 0;
     background-color: #F5F5F5;
@@ -66,6 +77,15 @@ header{
     color:#D4AF37;
     opacity: 50%;
     user-select: none;
+}
+
+h1{
+    font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 h2{
@@ -158,11 +178,37 @@ img{
 }
 
 
+
+
+
+h4{
+    color: #0F4279;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.propos{
+    margin-top: 25px;
+}
+
+.propos>div{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 50px; 
+    padding: 50px;
+}
+
 .propos > div > div{
     background-color: #0F4279;
     color: #F5F5F5;
-    
+    padding: 15px;
+    border-radius: 25px;    
+    max-width: 315px;
+    box-sizing: border-box;
 }
+
+
 
 
 
