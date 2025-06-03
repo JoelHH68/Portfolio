@@ -43,13 +43,58 @@
 
                 <div class="cases">
 
-                    <div class="projet">
+                    <!-- <div class="projet">
                         <div class="nom_projet">SAE 105</div>
                         <img src="Images/SAE105.png" alt="Screen du site web">
-                        <p>Dans le cadre d'une Situation d'Apprentissage Evaluer, j'ai du réaliser un site web listant
+                        <p class="description">Dans le cadre d'une Situation d'Apprentissage Evaluer, j'ai du réaliser un site web listant
                             tout les projets réaliser lors du 1er semestre de mon BUT MMI. Pour réaliser ce site, il a
                             fallut coder en HTML, CSS, et JavaScript pour afficher les différents projet de manière
                             dynamique.</p>
+                        <button onclick="showModal(this)">Voir plus</button>
+                    </div>
+
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="modal-close">
+                                <svg width="24" height="24" fill="#D4AF37" viewBox="0 0 24 24">
+                                    <path d="M18 6L6 18M6 6l12 12" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                            <h2 class="modal-title">SAE105</h2>
+                            <img class="modal-img" src="Images/SAE105.png" alt="Screen du site de la SAE">
+                            <p class="modal-desc">Pour cette SAE, j'ai commencé par réaliser la page d'accueil, avec des petites sections de texte
+                                où je me présente brièvelent, ainsi qu'une partie où ja parle du prefesseur qui m'a fait découvrir le développement
+                                web avec de l'HTML et du CSS. J'y ai ajouté un bouton menant vers une seconde page, cette deuxième page est une liste
+                                des différents projets que j'ai réalisé pendant la première année du BUT MMI. Lorsque l'on clique sur une case de SAE,
+                                on arrive sur une troisième page que j'ai codé, avec des informations plus précise sur chaque SAE, affiché totalement
+                                par le fichier json qui contenait toutes les informations sur les SAE.
+                            </p>
+                        </div>
+                    </div> -->
+
+
+                    <div class="projet">
+                        <div class="nom_projet">SAE 105</div>
+                        <img src="Images/SAE105.png" alt="Screen du site web">
+                        <p class="description">Dans le cadre d'une Situation d'Apprentissage Evaluer, j'ai du réaliser un site web listant
+                            tout les projets réaliser lors du 1er semestre de mon BUT MMI. Pour réaliser ce site, il a
+                            fallut coder en HTML, CSS, et JavaScript pour afficher les différents projet de manière
+                            dynamique.</p>
+                        <div class="popup-data" style="display: none;">
+                            <h3 class="popup-title">SAE 105</h3>
+                            <img class="popup-img" src="Images/SAE105-detail.png" alt="Version détaillée">
+                            <p class="popup-desc">
+                            Pour cette SAE, j'ai commencé par réaliser la page d'accueil, avec des petites sections de texte
+                                où je me présente brièvelent, ainsi qu'une partie où ja parle du prefesseur qui m'a fait découvrir le développement
+                                web avec de l'HTML et du CSS. J'y ai ajouté un bouton menant vers une seconde page, cette deuxième page est une liste
+                                des différents projets que j'ai réalisé pendant la première année du BUT MMI. Lorsque l'on clique sur une case de SAE,
+                                on arrive sur une troisième page que j'ai codé, avec des informations plus précise sur chaque SAE, affiché totalement
+                                par le fichier json qui contenait toutes les informations sur les SAE.
+                            </p>
+                            <p class="popup-tech">Technos utilisées : HTML, CSS, JavaScript</p>
+                            <a class="popup-link" href="https://mon-lien.com" target="_blank">Voir le projet en ligne</a>
+                        </div>
+                        <button onclick="showModal(this)">Voir plus</button>
                     </div>
 
                     <!-- <div class="projet">
@@ -232,6 +277,34 @@
 
     </footer>
 
+
+    <script>
+        function showModal(button) {
+        const projet = button.parentElement;
+        const popup = projet.querySelector('.popup-data');
+
+        document.querySelector('.modal-title').textContent = popup.querySelector('.popup-title').textContent;
+        document.querySelector('.modal-img').src = popup.querySelector('.popup-img').src;
+        document.querySelector('.modal-desc').textContent = popup.querySelector('.popup-desc').textContent;
+        document.querySelector('.modal-tech').textContent = popup.querySelector('.popup-tech').textContent;
+        document.querySelector('.modal-link').textContent = popup.querySelector('.popup-link').textContent;
+
+        // Tu peux ajouter d'autres champs comme .popup-tech, .popup-link, etc.
+
+        document.querySelector('.modal').style.display = 'flex';
+        }
+
+        function showModal(button) {
+        const projet = button.parentElement;
+        const popup = projet.querySelector('.popup-data');
+        if (popup.style.display === "none" || popup.style.display === "") {
+            popup.style.display = "block";
+        } else {
+            popup.style.display = "none";
+        }
+}
+
+    </script>
 </body>
 
 </html>
