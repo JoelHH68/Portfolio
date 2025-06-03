@@ -126,7 +126,6 @@ h3{
 
 
 /*Pour les cases avec les projets*/
-
 .projets{
     min-height: 100vh;
     display: flex;
@@ -157,7 +156,6 @@ img{
     margin-bottom: 50px;
 }
 
-
 .cases {
     display: flex;
     flex-wrap: wrap; 
@@ -174,8 +172,10 @@ img{
     flex: 1 1 300px; 
     max-width: 400px;
     box-sizing: border-box;
+    position: relative;
 }
 
+/* Popup modal */
 
 .modal {
   display: none;
@@ -199,6 +199,8 @@ img{
   text-align: center;
   position: relative;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 .modal-content img {
@@ -232,22 +234,9 @@ img{
   background-color: #c29d2f;
 }
 
-
-/* Bouton "Voir plus" */
-.projet button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #D4AF37;
-  color: #3A3B3C;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.projet button:hover {
-  background-color: #c29d2f;
+/* Cache la popup-data dans le projet (elles servent de contenu) */
+.popup-data {
+  display: none;
 }
 
 
