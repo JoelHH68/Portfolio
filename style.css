@@ -2,20 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
-/* .merriweather-<uniquifier> {
-  font-family: "Merriweather", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-} */
-
 body{
     margin: 0;
     background-color: #F5F5F5;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
 header{
@@ -26,6 +16,7 @@ header{
     color: #F5F5F5;
     height: 80px; 
     box-sizing: border-box; 
+    align-items: center;
 }
 
 .menu{
@@ -41,6 +32,16 @@ header{
 .menu>div>a:hover{
     color: #D4AF37;
     transition: 0.2s;
+}
+
+.logo{
+    width: 40px;
+    height: auto;
+    padding: 0px;
+}
+
+.logo>img{
+    width: 100%;
 }
 
 
@@ -80,11 +81,7 @@ header{
 }
 
 h1{
-    font-family: "Merriweather", serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-  font-variation-settings: "width" 100;
+    font-family: arial
 }
 
 h2{
@@ -136,7 +133,7 @@ h3{
     text-align: center;
 }
 
-img {
+main img {
     width: 310px;
     margin-top: 25px;
 }
@@ -150,6 +147,7 @@ img {
     margin: 0 100px;
     font-size: 26px;
     min-width: 80%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 .site, .maquette {
@@ -304,7 +302,9 @@ h4{
     box-sizing: border-box;
 }
 
-
+.zone :first-child{
+    padding-bottom: 20px;
+}
 
 
 
