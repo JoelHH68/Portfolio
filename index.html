@@ -10,31 +10,57 @@
 
 <body>
     <header>
-        <div class="logo">
-            <img src="Images/Mon_logo.png" alt="Mon logo">
-        </div>
+        <div class="logo">&lt;/JH&gt;</div>
         <div class="menu">
-            <div class="mesprojets"><a href="#projets">Mes projets</a></div>
-            <div class="aproposdemoi"><a href="#propos">A propos</a></div>
-            <div class="contactmoi"><a href="#contact">Contact</a></div>
+            <a href="#projets">Mes projets</a>
+            <a href="#propos">À propos</a>
+            <a href="#contact">Contact</a>
         </div>
     </header>
 
     <main>
         <div class="home">
-            <div class="ouvert">&lt; &gt;</div>
-            <div class="ferme">&lt;/&gt;</div>
-            <h1>Bienvenue sur mon Portfolio !</h1>
-            <h2>Bonjour, je suis <span>Joël HAUPTMANN HERBETTE</span>, et je recherche une <span>alternance</span> de 2
-                ans en <span>développement web</span> !</h2>
-            <h3>Découvrir mes projets</h3>
-            <a class="rond" href="#projets">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                    stroke="#D4AF37" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 5v13M5 12l7 7 7-7" />
-                </svg>
-            </a>
+
+            <h2>Développeur Web</h2>
+
+            <h1>Joël HAUPTMANN</h1>
+            
+            <div>Front-end | Back-end | UX/UI</div>
+
+            <div class="presentation">Étudiant en 3e année de BUT MMI, parcours Développement Web à l'IUT de Mulhouse. Passioné par la création de sites modernes, fonctionnels et accessibles.</div>
+
+            <div class="voir-projet">Voir mes projets</div>
+            <div class="CV">
+                Télécharger mon CV
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"/></svg>
+            </div>
+
+            <div class="scroll">
+                <p>Scroll pour découvrir</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </div>
+
         </div>
+
+
+        <div class="propos">
+
+            <div class="nb">01/</div>
+            <h2>À propos de moi</h2>
+
+            <p>Je m'appelle Joël, j'ai 20 ans et je suis étudiant en BUT <span>Métiers du Multimédia et de l'Internet</span>, dans le parcours <span>Développement web et dispositifs interactifs</span>Je suis passionné par la création d'interfaces modernes, la programmmations et la résolutions de problèmes. J'aime transformer des idées en projets concrets et utiles</p>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
 
         <div class="projets" id="projets">
             <div class="site">
@@ -304,61 +330,6 @@
 
     </footer>
 
-
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Gestion des clics sur les projets
-    document.querySelectorAll('.projet').forEach(projet => {
-        projet.addEventListener('click', function(e) {
-            // Ne pas ouvrir le pop-up si on clique sur le bouton "Voir plus"
-            if (!e.target.classList.contains('voir-plus')) {
-                const popupId = this.getAttribute('data-popup');
-                openPopup(popupId);
-            }
-        });
-    });
-
-    // Gestion des clics sur les boutons "Voir plus"
-    document.querySelectorAll('.projet .voir-plus').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation(); // Empêche le déclenchement du click sur le parent
-            const popupId = this.closest('.projet').getAttribute('data-popup');
-            openPopup(popupId);
-        });
-    });
-
-    // Gestion des clics sur les boutons de fermeture
-    document.querySelectorAll('.close-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const popup = this.closest('.popup');
-            closePopup(popup);
-        });
-    });
-
-    // Fermer le pop-up si on clique en dehors du contenu
-    document.querySelectorAll('.popup').forEach(popup => {
-        popup.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePopup(this);
-            }
-        });
-    });
-});
-
-function openPopup(popupId) {
-    const popup = document.querySelector(`#${popupId}`);
-    if (popup) {
-        popup.style.display = "flex";
-        document.body.style.overflow = "hidden";
-    }
-}
-
-function closePopup(popup) {
-    popup.style.display = "none";
-    document.body.style.overflow = "auto";
-}
-
-    </script>
 </body>
 
 </html>
