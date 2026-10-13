@@ -1,8 +1,175 @@
+:root {
+    /* Couleurs principales */
+    --fond: #050B16;
+    --fond-secondaire: #08172B;
+    --fond-carte: #0B1A2E;
+
+    /* Couleurs du texte */
+    --couleur-texte: #F5F5F5;
+    --texte-secondaire: #A8B3C7;
+
+    /* Couleurs d'accent */
+    --doree: #D4AF37;
+    --bleue: #1683FF;
+    --bleue-claire: #4DA3FF;
+
+    /* Polices */
+    --titres: 'Merriweather', serif;
+    --texte: 'Roboto', sans-serif;
+
+    /* Espacements */
+    --petit: 10px;
+    --moyen: 20px;
+    --grand: 40px;
+    --enorme: 200px;
+
+    /* Bordures et effets */
+    --arrondi: 16px;
+    --bordure: 1px solid rgba(212, 175, 55, 0.3);
+    --ombre-carte: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
 html {
     scroll-behavior: smooth;
 }
 
 body{
     margin: 0;
-    font-family: inter, sans-serif;
+    background-color: var(--fond);
+    color: var(--couleur-texte);
+}
+
+
+header{
+    border: solid 1px #0B1A2E;
+    margin: var(--grand) var(--enorme);
+    padding: var(--moyen) var(--grand);
+    border-radius: var(--arrondi);
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--fond-secondaire);
+}
+
+.logo{
+    font-family: var(--titres);
+    font-size: 24px;
+    color: var(--doree);
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    font-family: var(--texte);
+    gap: var(--grand);
+}
+
+.menu a{
+    text-decoration: none;
+    color: var(--couleur-texte);
+}
+
+
+
+.home-gauche{
+    margin: var(--grand) var(--enorme);
+    padding: var(--grand) 0;
+}
+
+.titre-page{
+    display: flex;
+    align-items: center;
+    gap: var(--petit);
+    margin-bottom: var(--grand);
+}
+
+h2{
+    font-family: var(--titres);
+    font-size: 24px;
+    color: var(--doree);
+    margin: 0;
+}
+
+h1{
+    font-family: var(--titres);
+    font-size: 48px;
+    color: var(--couleur-texte);
+    margin: 0 0 var(--moyen) 0;
+}
+
+.sous-titre{
+    font-family: var(--texte);
+    font-size: 18px;
+    color: var(--doree);
+    margin: 0 0 var(--grand) 0;
+}
+
+.presentation{
+    font-family: var(--texte);
+    font-size: 16px;
+    color: var(--couleur-texte);
+    margin-top: var(--moyen);
+    max-width: 550px;
+}
+
+.boutons{
+    display: flex;
+    gap: var(--moyen);
+    margin-top: var(--grand);
+}
+
+.voir-projet{
+    padding: var(--petit) var(--moyen);
+    background-color: var(--bleue);
+    color: var(--couleur-texte);
+    text-decoration: none;
+    border-radius: var(--arrondi);
+}
+
+.CV{
+    padding: var(--petit) var(--moyen);
+    background-color: var(--fond-carte);
+    color: var(--couleur-texte);
+    text-decoration: none;
+    border-radius: var(--arrondi);
+    border: var(--bordure);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: var(--petit);
+}
+
+.scroll{
+    position: absolute;
+    bottom: var(--moyen);
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--bleue-claire);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CANVAS */
+
+#fond{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+.home{
+    position: relative;   /* repère pour #nuage */
+    min-height: calc(100vh - 150px);
+}
+
+#nuage{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -1;               /* derrière le texte de .home */
+    pointer-events: none;      /* ne bloque pas les clics */
 }
