@@ -25,6 +25,7 @@
 
     /* Bordures et effets */
     --arrondi: 16px;
+    --arrondi-petit: 8px;
     --bordure: 1px solid rgba(212, 175, 55, 0.3);
     --ombre-carte: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -42,7 +43,7 @@ body{
 
 
 header{
-    border: solid 1px #0B1A2E;
+    border: var(--bordure);
     margin: var(--grand) var(--enorme);
     padding: var(--moyen) var(--grand);
     border-radius: var(--arrondi);
@@ -172,4 +173,64 @@ h1{
     height: 100%;
     z-index: -1;               /* derrière le texte de .home */
     pointer-events: none;      /* ne bloque pas les clics */
+}
+
+
+
+.projets{
+    margin: var(--grand) var(--enorme);
+    padding: var(--grand) 0;
+}   
+
+.liste-projet{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--moyen);
+}
+
+.card-projet{
+    background-color: var(--fond-carte);
+    border: var(--bordure);
+    box-shadow: var(--ombre-carte);
+    border-radius: var(--arrondi);
+    padding: var(--grand);
+    margin-bottom: var(--grand);
+    display: flex;
+    flex-direction: column;
+    gap: var(--petit);
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.langague{
+    display: flex;
+    gap: var(--petit);
+    flex-wrap: wrap;
+}
+
+.lang{
+    background-color: var(--fond-secondaire);
+    color: var(--couleur-texte);
+    padding: var(--petit);
+    border-radius: var(--arrondi);
+    font-size: 12px;
+    font-family: var(--texte);
+    border: var(--bordure);
+}
+
+
+.card-liens{
+    display: flex;
+    gap: var(--moyen);
+}
+
+.card-liens a{
+    padding: var(--petit) var(--moyen);
+    background-color: var(--bleue);
+    color: var(--couleur-texte);
+    text-decoration: none;
+    border-radius: var(--arrondi-petit);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
