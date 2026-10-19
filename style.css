@@ -21,7 +21,7 @@
     --petit: 10px;
     --moyen: 20px;
     --grand: 40px;
-    --enorme: 200px;
+    --enorme: 10%;
 
     /* Bordures et effets */
     --arrondi: 16px;
@@ -233,4 +233,22 @@ h1{
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+
+.propos-competences{
+    margin: var(--grand) var(--enorme);
+    padding: var(--grand) 0;
+}
+
+.propos-comp{
+    display: flex;
+}
+
+.propos{
+    max-width: 600px;
+}
+
+.propos p span{
+    color: var(--doree);
 }
