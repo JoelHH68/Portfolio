@@ -14,14 +14,15 @@
     --bleue-claire: #4DA3FF;
 
     /* Polices */
-    --titres: 'Merriweather', serif;
-    --texte: 'Roboto', sans-serif;
+    --titre: 'Playfair Display', serif;
+    --texte: 'DM Sans', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
 
     /* Espacements */
     --petit: 10px;
     --moyen: 20px;
     --grand: 40px;
-    --enorme: 10%;
+    --pourcentage: 10%;
 
     /* Bordures et effets */
     --arrondi: 16px;
@@ -39,12 +40,17 @@ body{
     margin: 0;
     background-color: var(--fond);
     color: var(--couleur-texte);
+    font-family: var(--texte);
 }
 
+.nb{
+    font-family: var(--mono);
+    color: var(--doree)
+}
 
 header{
     border: var(--bordure);
-    margin: var(--grand) var(--enorme);
+    margin: var(--grand) var(--pourcentage);
     padding: var(--moyen) var(--grand);
     border-radius: var(--arrondi);
     display: flex;
@@ -53,7 +59,7 @@ header{
 }
 
 .logo{
-    font-family: var(--titres);
+    font-family: var(--titre);
     font-size: 24px;
     color: var(--doree);
 }
@@ -61,7 +67,6 @@ header{
 .menu{
     display: flex;
     align-items: center;
-    font-family: var(--texte);
     gap: var(--grand);
 }
 
@@ -73,7 +78,7 @@ header{
 
 
 .home-gauche{
-    margin: var(--grand) var(--enorme);
+    margin: var(--grand) var(--pourcentage);
     padding: var(--grand) 0;
 }
 
@@ -85,28 +90,26 @@ header{
 }
 
 h2{
-    font-family: var(--titres);
+    font-family: var(--titre);
     font-size: 24px;
-    color: var(--doree);
+    color: var(--couleur-texte);
     margin: 0;
 }
 
 h1{
-    font-family: var(--titres);
+    font-family: var(--titre);
     font-size: 48px;
     color: var(--couleur-texte);
     margin: 0 0 var(--moyen) 0;
 }
 
 .sous-titre{
-    font-family: var(--texte);
     font-size: 18px;
     color: var(--doree);
     margin: 0 0 var(--grand) 0;
 }
 
 .presentation{
-    font-family: var(--texte);
     font-size: 16px;
     color: var(--couleur-texte);
     margin-top: var(--moyen);
@@ -178,7 +181,7 @@ h1{
 
 
 .projets{
-    margin: var(--grand) var(--enorme);
+    margin: var(--grand) var(--pourcentage);
     padding: var(--grand) 0;
 }   
 
@@ -213,7 +216,6 @@ h1{
     padding: var(--petit);
     border-radius: var(--arrondi);
     font-size: 12px;
-    font-family: var(--texte);
     border: var(--bordure);
 }
 
@@ -237,18 +239,170 @@ h1{
 
 
 .propos-competences{
-    margin: var(--grand) var(--enorme);
+    margin: var(--grand) var(--pourcentage);
     padding: var(--grand) 0;
-}
-
-.propos-comp{
-    display: flex;
-}
-
-.propos{
-    max-width: 600px;
 }
 
 .propos p span{
     color: var(--doree);
+}
+
+
+.propos-comp{
+    display: flex;
+    gap: var(--grand);
+    align-items: flex-start;
+}
+
+.propos{
+    flex: 1;
+    max-width: 600px;
+}
+
+.competences{
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--moyen);
+}
+
+.compet{
+    border: var(--bordure);
+    border-radius: var(--arrondi);
+    box-shadow: var(--ombre-carte);
+    padding: var(--moyen);
+    background-color: var(--fond-carte);
+    min-height: 150px;
+}
+
+.liste-comp{
+    display: flex;
+    gap: var(--moyen);
+    margin-top: var(--moyen);
+    flex-wrap: wrap;
+}
+
+.titre-comp{
+    font-family: var(--titre);
+}
+
+.comp{
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: var(--ombre-carte);
+    padding: var(--petit);
+    font-size: 12px;
+    border-radius: var(--arrondi-petit);
+    width: fit-content;
+}
+
+.parcours{
+    margin: var(--grand) var(--pourcentage);
+    padding: var(--grand) 0;
+}
+
+.parcours-cartes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--grand);
+    margin-top: var(--grand);
+}
+
+.card-parcours{
+    position: relative;
+    border: 1px solid rgba(77, 163, 255, 0.15);
+    border-radius: var(--arrondi);
+    background-color: var(--fond-carte);
+    padding: var(--grand) var(--moyen) var(--moyen);
+}
+
+/* badge date sur la bordure */
+.date{
+    position: absolute;
+    top: -12px;
+    left: var(--moyen);
+    padding: 2px 12px;
+    background-color: var(--fond);
+    border-radius: var(--arrondi-petit);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--bleue);
+}
+
+.ecole{
+    font-family: var(--font-titre);
+    font-size: 20px;
+    margin-bottom: var(--petit);
+}
+
+.spe,
+.lieu{
+    color: var(--texte-secondaire);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px){
+    .parcours-cartes{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.liens{
+    display: flex;
+    justify-content: center;
+    gap: var(--moyen);
+    margin-bottom: 0; /* le gap du parent gère l'espace */
+}
+
+.liens a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border: var(--bordure);
+    border-radius: 50%;
+    background-color: var(--fond-carte);
+    color: var(--couleur-texte);
+    transition: transform 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.liens a:hover{
+    color: var(--doree);
+    border-color: var(--doree);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.25);
+}
+
+.cv{
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid var(--doree);
+    border-radius: var(--arrondi-petit);
+    background-color: var(--doree);
+    color: var(--fond);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.cv:hover{
+    background-color: transparent;
+    color: var(--doree);
+}
+
+
+.contact{
+    margin: var(--grand) var(--pourcentage);
+    padding: var(--grand) 0;
+}
+
+.contact-centre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--grand);
+    margin-top: var(--grand);
 }
