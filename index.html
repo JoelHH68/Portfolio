@@ -62,15 +62,15 @@
 
             
 
-            <div class="scroll">
+            <a class="scroll" href="#projets">
                 <p>Scroll pour découvrir</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
-            </div>
+            </a>
 
         </div>
 
 
-        <div class="projets">
+        <div class="projets" id="projets">
             <div class="nb">01/</div>
             <div class="titre-page">
                 <h2>Mes projets</h2>
@@ -82,10 +82,11 @@
 
             <div class="liste-projet">
                 <div class="card-projet">
-                    <img src="" alt="Screen du site">
+                    <img src="Images/horlogerie-massa.png" alt="Screen du site">
                     <div class="card-content">
                         <h3>Atelier d'Hologerie MASSA</h3>
-                        <p>J'ai réalisé ce site web pour l'atelier d'horlogerie MASSA dans le cadre du stage de fin de 2e année. C'est un site présentant l'horlogerie, les services proposés, mais aussi un catalogue montrant les montres et bijoux vendus dans la boutique. J'ai réalisé ce projet seul, de la maquette au développement, en finissant par l'hébergement.</p>
+                        <div class="sous-titre-projet">Stage | 8 semaines | 2026</div>
+                        <p>Développement d'un site vitrine et d'un catalogue dynamique de montres et de bijoux, de la conception à la mise en ligne.</p>
                         <div class="langague">
                             <div class="lang">HTML</div>
                             <div class="lang">CSS</div>
@@ -95,54 +96,185 @@
                         </div>
                     </div>
                     <div class="card-liens">
-                        <a href="">En savoir plus</a>
-                        <a href="">Voir le site<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5F5F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></svg></a>
+                        <a href="https://horlogeriemassa.fr/">Voir le site<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5F5F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></svg></a>
+                    </div>
+                    <button class="btn-methodo" type="button" aria-expanded="false">En savoir plus</button>
+                    <div class="methodo">
+
+                        <div class="methodo-contenu">
+                            <section class="etape">
+                                <h4><span>01/</span>Le projet</h4>
+                                <p>L'atelier avait besoin d'un site pour présenter son activité et ses produits en ligne. L'enjeu était de proposer une vitrine claire, avec un catalogue permettant aux visiteurs de retrouver facilement les montres et les bijoux disponibles.</p>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>02/</span>Ce que j'ai réalisé</h4>
+                                <p>J'ai pris en charge le projet de A à Z : maquettes sur Figma, intégration des pages, développement des fonctionnalités et mise en ligne. J'ai utilisé PHP et MySQL pour rendre le catalogue dynamique.</p>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>03/</span>Les grandes étapes</h4>
+                                <ol>
+                                    <li>Concevoir les maquettes et organiser les pages.</li>
+                                    <li>Développer le site et ses fonctionnalités.</li>
+                                    <li>Créer le catalogue connecté à la base de données et ses filtres.</li>
+                                    <li>Tester le site, corriger les problèmes et le mettre en ligne.</li>
+                                </ol>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>04/</span>Le résultat</h4>
+                                <p>Le site est accessible en ligne et permet de découvrir l'atelier, ses services et son catalogue. Ce stage m'a surtout permis de travailler sur un projet complet en conditions réelles. Avec plus de temps, j'aurais approfondi le travail visuel pour mieux retranscrire les codes du luxe.</p>
+                            </section>
+                        </div>
                     </div>
                 </div>
 
                 <div class="card-projet">
-                    <img src="" alt="Screen du site">
+                    <img src="Images/sae303.png" alt="Capture du site WorldWideWeight">
                     <div class="card-content">
-                        <h3>Titre du projet</h3>
-                        <p>Description du projet...</p>
+                        <h3>WorldWideWeight</h3>
+                        <div class="sous-titre-projet">SAE | 2025</div>
+                        <p>Création d'un site web permettant d'explorer des données sur le poids à travers des graphiques interactifs, à partir d'un jeu de données JSON récupéré en ligne.</p>
                         <div class="langague">
                             <div class="lang">HTML</div>
                             <div class="lang">CSS</div>
                             <div class="lang">JavaScript</div>
                         </div>
                     </div>
+                    <div class="card-liens">
+                        <a href="https://joelhh68.github.io/SAE303/">Voir le site<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5F5F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></svg></a>
+                    </div>
+                    <button class="btn-methodo" type="button" aria-expanded="false">En savoir plus</button>
+                    <div class="methodo">
+
+                        <div class="methodo-contenu">
+                            <section class="etape">
+                                <h4><span>01/</span>Le projet</h4>
+                                <p>Cette SAE avait pour objectif de transformer un jeu de données JSON récupéré en ligne en une expérience web interactive. L'idée était de rendre les données plus faciles à comprendre grâce à des graphiques plutôt que de simplement afficher des chiffres.</p>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>02/</span>Ce que j'ai réalisé</h4>
+                                <p>J'ai travaillé sur la création du site en HTML, CSS et JavaScript, avec l'intégration des données et leur exploitation pour afficher des graphiques interactifs.</p>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>03/</span>Les grandes étapes</h4>
+                                <ol>
+                                    <li>Récupérer et comprendre le jeu de données JSON.</li>
+                                    <li>Organiser les informations pour les exploiter en JavaScript.</li>
+                                    <li>Créer l'interface et intégrer les graphiques interactifs.</li>
+                                    <li>Tester le fonctionnement du site et publier le résultat en ligne.</li>
+                                </ol>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>04/</span>Le résultat</h4>
+                                <p>Le projet aboutit à un site accessible en ligne qui permet de visualiser les données sous forme de graphiques interactifs. Cette SAE m'a permis de mieux comprendre comment exploiter des données externes en JavaScript et les rendre plus lisibles pour les utilisateurs. Avec plus de temps, j'approfondirais la présentation des données et les possibilités d'interaction.</p>
+                            </section>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card-projet">
-                    <img src="" alt="Screen du site">
+                    <img src="Images/laby.png" alt="Capture du jeu interactif Labyrinthe">
                     <div class="card-content">
-                        <h3>Titre du projet</h3>
-                        <p>Description du projet...</p>
+                        <h3>Jeu interactif - Labyrinthe</h3>
+                        <div class="sous-titre-projet">SAE | Projet en équipe | 2026</div>
+                        <p>Développement d'un mini-jeu interactif intégré à un site proposant plusieurs jeux autour de la ville de Mulhouse.</p>
                         <div class="langague">
                             <div class="lang">HTML</div>
                             <div class="lang">CSS</div>
                             <div class="lang">JavaScript</div>
                         </div>
                     </div>
-                </div>
+                    <div class="card-liens">
+                        <a href="https://joelhh68.github.io/Jeu-SAE402/">Voir le site<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5F5F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></svg></a>
+                    </div>
+                    <button class="btn-methodo" type="button" aria-expanded="false">En savoir plus</button>
+                    <div class="methodo">
 
-                <div class="card-projet">
-                    <img src="" alt="Screen du site">
-                    <div class="card-content">
-                        <h3>Titre du projet</h3>
-                        <p>Description du projet...</p>
-                        <div class="langague">
-                            <div class="lang">HTML</div>
-                            <div class="lang">CSS</div>
-                            <div class="lang">JavaScript</div>
+                        <div class="methodo-contenu">
+                            <section class="etape">
+                                <h4><span>01/</span>Le projet</h4>
+                                <p>Dans le cadre d'un projet de groupe, nous avons créé un site proposant plusieurs mini-jeux autour de la ville de Mulhouse. L'objectif était de proposer une expérience interactive et ludique aux utilisateurs.</p>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>02/</span>Ce que j'ai réalisé</h4>
+                                <p>Je me suis occupé du développement du mini-jeu Labyrinthe. J'ai utilisé HTML et CSS pour construire son interface, puis JavaScript pour gérer son fonctionnement et les interactions avec le joueur.</p>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>03/</span>Les grandes étapes</h4>
+                                <ol>
+                                    <li>Définir le fonctionnement du labyrinthe et les interactions possibles.</li>
+                                    <li>Créer la structure du jeu en HTML et travailler son apparence en CSS.</li>
+                                    <li>Développer la logique du jeu en JavaScript.</li>
+                                    <li>Tester le jeu et l'intégrer au projet collectif.</li>
+                                </ol>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>04/</span>Le résultat</h4>
+                                <p>Le mini-jeu est accessible en ligne au sein du projet. Cette réalisation m'a permis de travailler davantage la logique JavaScript et la gestion des interactions. Elle m'a aussi appris à développer une fonctionnalité qui s'intègre dans un site réalisé en équipe.</p>
+                            </section>
                         </div>
                     </div>
                 </div>
+
+                <div class="card-projet">
+                    <img src="Images/colmar.png" alt="Carte de vœux réalisée pour la ville de Colmar">
+                    <div class="card-content">
+                        <h3>Carte de vœux - Ville de Colmar</h3>
+                        <div class="sous-titre-projet">Création graphique | Projet étudiant | 2025</div>
+                        <p>Conception d'une carte de vœux destinée à la ville de Colmar, avec un travail de création visuelle adapté à son identité et à l'occasion.</p>
+                        <div class="langague">
+                            <div class="lang">Création graphique</div>
+                            <div class="lang">Adobe Illustrator</div>
+                        </div>
+                    </div>
+                    <div class="card-liens">
+                        <a href="Carte_de_voeux-Trystan_ROUSSEL-Joel_Hauptmann.pdf">Voir le projet</a>
+                    </div>
+                    <button class="btn-methodo" type="button" aria-expanded="false">En savoir plus</button>
+                    <div class="methodo">
+
+                        <div class="methodo-contenu">
+                            <section class="etape">
+                                <h4><span>01/</span>Le projet</h4>
+                                <p>L'objectif était de concevoir une carte de vœux pour la ville de Colmar. Il fallait créer un support visuel adapté à la communication de la ville, en proposant une réalisation soignée et cohérente avec son image.</p>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>02/</span>Ce que j'ai réalisé</h4>
+                                <p>J'ai travaillé sur la conception graphique de la carte, en réfléchissant à la composition et à la manière de mettre en valeur le message. Ce projet m'a permis de sortir du développement web pour me concentrer sur la création visuelle et la communication.</p>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>03/</span>Les grandes étapes</h4>
+                                <ol>
+                                    <li>Comprendre la demande et les attentes liées à la carte.</li>
+                                    <li>Rechercher une direction graphique adaptée à la ville de Colmar.</li>
+                                    <li>Concevoir la composition et travailler les éléments visuels.</li>
+                                    <li>Finaliser la carte en tenant compte de l'objectif de communication.</li>
+                                </ol>
+                            </section>
+
+                            <section class="etape">
+                                <h4><span>04/</span>Résultat et recul</h4>
+                                <p>Ce projet m'a permis de développer une autre facette de mes compétences, en travaillant sur un support de communication plutôt que sur un site web. Il m'a aussi amené à réfléchir à l'importance des choix graphiques pour transmettre un message et représenter une organisation.</p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
 
-        <div class="propos-competences">
+        <div class="propos-competences" id="propos">
 
             <div class="nb">02/</div>
             <div class="titre-page">
@@ -239,9 +371,16 @@
         <div class="contact" id="contact">
 
             <div class="nb">04/</div>
-            <h2>Contact</h2>
+            <div class="titre-page">
+                <h2>Contact</h2>
+                <svg width="100" height="1" viewBox="0 0 100 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line y1="0.5" x2="100" y2="0.5" stroke="#F2C94C"/>
+                </svg>
+            </div>
 
-            <div class="contact-centre">
+            <div class="contact-ligne">
+
+                <a href="CV/Hauptmann_Joel.pdf" class="cv" target="_blank" rel="noopener">Mon CV</a>
 
                 <div class="liens">
                     <a href="https://github.com/JoelHH68" target="_blank" rel="noopener" aria-label="GitHub">
@@ -269,9 +408,6 @@
                         </svg>
                     </a>
                 </div>
-                <a href="CV/Hauptmann_Joel.pdf" class="cv">
-                    Mon CV
-                </a>
             </div>
         </div>
     </main>
@@ -282,6 +418,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="projet.js"></script>
 
 </body>
 

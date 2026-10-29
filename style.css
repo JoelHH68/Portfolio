@@ -29,244 +29,513 @@
     --arrondi-petit: 8px;
     --bordure: 1px solid rgba(212, 175, 55, 0.3);
     --ombre-carte: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --transition: 0.25s ease;
 }
 
+
+/* ---------- BASE ---------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     margin: 0;
     background-color: var(--fond);
     color: var(--couleur-texte);
     font-family: var(--texte);
+    line-height: 1.6;
 }
 
-.nb{
+h1, h2, h3 {
+    font-family: var(--titre);
+    color: var(--couleur-texte);
+}
+
+h1 {
+    font-size: clamp(34px, 6vw, 48px);
+    line-height: 1.15;
+    margin: 0 0 var(--moyen) 0;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+h3 {
+    font-size: 20px;
+    margin: 0 0 var(--petit) 0;
+}
+
+p {
+    margin: 0 0 var(--moyen) 0;
+}
+
+.nb {
     font-family: var(--mono);
-    color: var(--doree)
+    color: var(--doree);
 }
 
-header{
+
+/* ---------- HEADER ---------- */
+
+header {
     border: var(--bordure);
     margin: var(--grand) var(--pourcentage);
     padding: var(--moyen) var(--grand);
     border-radius: var(--arrondi);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--fond-secondaire);
 }
 
-.logo{
+.logo {
     font-family: var(--titre);
     font-size: 24px;
     color: var(--doree);
 }
 
-.menu{
+.menu {
     display: flex;
     align-items: center;
     gap: var(--grand);
 }
 
-.menu a{
+.menu a {
     text-decoration: none;
     color: var(--couleur-texte);
+    transition: color var(--transition);
+}
+
+.menu a:hover {
+    color: var(--doree);
 }
 
 
+/* ---------- TITRES DE SECTION ---------- */
 
-.home-gauche{
-    margin: var(--grand) var(--pourcentage);
-    padding: var(--grand) 0;
-}
-
-.titre-page{
+.titre-page {
     display: flex;
     align-items: center;
     gap: var(--petit);
     margin-bottom: var(--grand);
 }
 
-h2{
-    font-family: var(--titre);
-    font-size: 24px;
-    color: var(--couleur-texte);
-    margin: 0;
+.projets p,
+.parcours > p {
+    color: var(--texte-secondaire);
 }
 
-h1{
-    font-family: var(--titre);
-    font-size: 48px;
-    color: var(--couleur-texte);
-    margin: 0 0 var(--moyen) 0;
+
+/* ---------- SECTIONS (même rythme partout) ---------- */
+
+.home-gauche,
+.projets,
+.propos-competences,
+.parcours,
+.contact {
+    margin: var(--grand) var(--pourcentage);
+    padding: var(--grand) 0;
 }
 
-.sous-titre{
-    font-size: 18px;
+
+/* ---------- HERO ---------- */
+
+.home {
+    position: relative;
+    min-height: calc(100vh - 150px);
+}
+
+.home-gauche {
+    margin-top: 0;
+}
+
+.sous-titre {
+    font-family: var(--mono);
+    font-size: 16px;
     color: var(--doree);
     margin: 0 0 var(--grand) 0;
 }
 
-.presentation{
+.presentation {
     font-size: 16px;
-    color: var(--couleur-texte);
+    color: var(--texte-secondaire);
     margin-top: var(--moyen);
     max-width: 550px;
 }
 
-.boutons{
+.boutons {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--moyen);
     margin-top: var(--grand);
 }
 
-.voir-projet{
-    padding: var(--petit) var(--moyen);
-    background-color: var(--bleue);
-    color: var(--couleur-texte);
-    text-decoration: none;
-    border-radius: var(--arrondi);
-}
-
-.CV{
-    padding: var(--petit) var(--moyen);
-    background-color: var(--fond-carte);
-    color: var(--couleur-texte);
-    text-decoration: none;
-    border-radius: var(--arrondi);
-    border: var(--bordure);
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    gap: var(--petit);
-}
-
-.scroll{
+.scroll {
     position: absolute;
-    bottom: var(--moyen);
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     color: var(--bleue-claire);
-    font-size: 14px;
+    font-size: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: none;
 }
 
-/* CANVAS */
+.scroll p {
+    margin: 0 0 var(--petit) 0;
+}
 
-#fond{
+.scroll svg {
+    width: 32px;
+    height: 32px;
+}
+
+
+/* ---------- BOUTONS (même forme, mêmes survols) ---------- */
+
+.voir-projet,
+.CV,
+.cv,
+.card-liens a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--petit);
+    padding: 12px var(--moyen);
+    border-radius: var(--arrondi-petit);
+    font-family: var(--texte);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    width: fit-content;
+    transition: transform var(--transition), background-color var(--transition),
+                color var(--transition), border-color var(--transition),
+                box-shadow var(--transition);
+}
+
+/* bouton principal : bleu plein */
+.voir-projet,
+.card-liens a {
+    background-color: var(--bleue);
+    border: 1px solid var(--bleue);
+    color: var(--couleur-texte);
+}
+
+.voir-projet:hover,
+.card-liens a:hover {
+    background-color: var(--bleue-claire);
+    border-color: var(--bleue-claire);
+    transform: translateY(-2px);
+}
+
+/* bouton secondaire : contour doré */
+.CV {
+    background-color: var(--fond-carte);
+    border: var(--bordure);
+    color: var(--couleur-texte);
+}
+
+.CV:hover {
+    border-color: var(--doree);
+    color: var(--doree);
+    transform: translateY(-2px);
+}
+
+/* bouton de contact : doré plein */
+.cv {
+    background-color: var(--doree);
+    border: 1px solid var(--doree);
+    color: var(--fond);
+    font-family: var(--mono);
+    padding: 12px 28px;
+}
+
+.cv:hover {
+    background-color: transparent;
+    color: var(--doree);
+}
+
+
+/* ---------- CANVAS ---------- */
+
+#fond {
     position: fixed;
     inset: 0;
     z-index: -1;
 }
 
-.home{
-    position: relative;   /* repère pour #nuage */
-    min-height: calc(100vh - 150px);
-}
-
-#nuage{
+#nuage {
     position: absolute;
     top: 0;
     right: 0;
     width: 50%;
     height: 100%;
-    z-index: -1;               /* derrière le texte de .home */
-    pointer-events: none;      /* ne bloque pas les clics */
+    z-index: -1;
+    pointer-events: none;
 }
 
 
+/* ---------- PROJETS ---------- */
 
-.projets{
-    margin: var(--grand) var(--pourcentage);
-    padding: var(--grand) 0;
-}   
-
-.liste-projet{
+.liste-projet {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--moyen);
 }
 
-.card-projet{
+.card-projet {
     background-color: var(--fond-carte);
     border: var(--bordure);
     box-shadow: var(--ombre-carte);
     border-radius: var(--arrondi);
-    padding: var(--grand);
-    margin-bottom: var(--grand);
+    padding: var(--moyen);
+    display: flex;
+    flex-direction: column;
+    gap: var(--moyen);
+    transition: transform var(--transition), border-color var(--transition);
+}
+
+.card-projet:hover {
+    transform: translateY(-4px);
+    border-color: var(--doree);
+}
+
+.card-projet img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--arrondi-petit);
+    background-color: var(--fond-secondaire);
+}
+
+/* masque les images sans source pour l'instant */
+.card-projet img[src=""] {
+    display: none;
+}
+
+.card-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: var(--petit);
-    font-family: Arial, Helvetica, sans-serif
 }
 
-.langague{
-    display: flex;
-    gap: var(--petit);
-    flex-wrap: wrap;
+.card-content p {
+    margin: 0;
+    color: var(--texte-secondaire);
+    font-size: 15px;
 }
 
-.lang{
-    background-color: var(--fond-secondaire);
-    color: var(--couleur-texte);
-    padding: var(--petit);
-    border-radius: var(--arrondi);
+.sous-titre-projet{
+    margin: 0;
+    color: var(--doree);
     font-size: 12px;
-    border: var(--bordure);
 }
 
-
-.card-liens{
+.card-liens {
     display: flex;
-    gap: var(--moyen);
+    flex-wrap: wrap;
+    gap: var(--petit);
+    margin-top: auto;
 }
 
-.card-liens a{
-    padding: var(--petit) var(--moyen);
-    background-color: var(--bleue);
-    color: var(--couleur-texte);
-    text-decoration: none;
-    border-radius: var(--arrondi-petit);
-    font-size: 14px;
+
+/* ---------- MÉTHODOLOGIE (carte dépliable, pilotée par projets.js) ---------- */
+
+/* "start" évite d'étirer les autres cartes, "dense" comble les trous */
+.liste-projet {
+    align-items: start;
+    grid-auto-flow: dense;
+}
+
+.btn-methodo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: var(--petit);
+    width: 100%;
+    padding: 12px var(--moyen);
+    background-color: var(--fond-secondaire);
+    border: var(--bordure);
+    border-radius: var(--arrondi-petit);
+    color: var(--couleur-texte);
+    font-family: var(--texte);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color var(--transition), border-color var(--transition);
 }
 
-
-.propos-competences{
-    margin: var(--grand) var(--pourcentage);
-    padding: var(--grand) 0;
-}
-
-.propos p span{
+.btn-methodo::after {
+    content: "+";
+    font-family: var(--mono);
     color: var(--doree);
 }
 
+.card-projet.ouvert .btn-methodo::after {
+    content: "−";
+}
 
-.propos-comp{
+.btn-methodo:hover {
+    color: var(--doree);
+    border-color: var(--doree);
+}
+
+/* bloc regroupant visuel, texte, liens et bouton (créé par projets.js) */
+.carte-infos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--moyen);
+    flex: 1;
+}
+
+/* contenu masqué tant que la carte n'est pas ouverte */
+.methodo-contenu {
+    display: none;
+    flex-direction: column;
+    gap: var(--moyen);
+}
+
+.card-projet.ouvert .methodo-contenu {
+    display: flex;
+}
+
+/* écrans larges : la carte ouverte passe en 2 colonnes
+   (sa place dans la grille est posée par le JS) */
+@media (min-width: 901px) {
+    .card-projet.ouvert {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        column-gap: var(--grand);
+        row-gap: var(--moyen);
+    }
+
+    /* par défaut : infos à gauche, méthodologie à droite */
+    .card-projet.ouvert > .carte-infos {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .card-projet.ouvert > .methodo-contenu {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* carte dans la dernière colonne : elle s'étend vers la gauche,
+       la méthodologie passe à gauche et les infos restent à droite */
+    .card-projet.ouvert-gauche > .carte-infos {
+        grid-column: 2;
+    }
+
+    .card-projet.ouvert-gauche > .methodo-contenu {
+        grid-column: 1;
+    }
+}
+
+
+.etape {
+    padding-left: var(--moyen);
+    border-left: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.etape h4 {
+    margin: 0 0 var(--petit) 0;
+    font-family: var(--titre);
+    font-size: 18px;
+    color: var(--couleur-texte);
+}
+
+.etape h4 span {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--doree);
+    margin-right: 6px;
+}
+
+.etape ul,
+.etape ol {
+    margin: 0;
+    padding-left: var(--moyen);
+    color: var(--texte-secondaire);
+    font-size: 15px;
+}
+
+.etape li {
+    margin-bottom: 4px;
+}
+
+.etape p {
+    margin: 0;
+    color: var(--texte-secondaire);
+    font-size: 15px;
+}
+
+
+/* ---------- TAGS (langages + compétences, même style) ---------- */
+
+.langague,
+.liste-comp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--petit);
+}
+
+.liste-comp {
+    margin-top: var(--moyen);
+}
+
+.lang,
+.comp {
+    background-color: var(--fond-secondaire);
+    color: var(--couleur-texte);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 6px 12px;
+    border: var(--bordure);
+    border-radius: var(--arrondi);
+    width: fit-content;
+}
+
+
+/* ---------- À PROPOS & COMPÉTENCES ---------- */
+
+.propos-comp {
     display: flex;
     gap: var(--grand);
     align-items: flex-start;
 }
 
-.propos{
+.propos {
     flex: 1;
     max-width: 600px;
+    color: var(--texte-secondaire);
 }
 
-.competences{
+.propos p span {
+    color: var(--doree);
+}
+
+.competences {
     flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--moyen);
 }
 
-.compet{
+.compet {
     border: var(--bordure);
     border-radius: var(--arrondi);
     box-shadow: var(--ombre-carte);
@@ -275,134 +544,162 @@ h1{
     min-height: 150px;
 }
 
-.liste-comp{
-    display: flex;
-    gap: var(--moyen);
-    margin-top: var(--moyen);
-    flex-wrap: wrap;
-}
-
-.titre-comp{
+.titre-comp {
     font-family: var(--titre);
+    font-size: 20px;
 }
 
-.comp{
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    box-shadow: var(--ombre-carte);
-    padding: var(--petit);
-    font-size: 12px;
-    border-radius: var(--arrondi-petit);
-    width: fit-content;
-}
 
-.parcours{
-    margin: var(--grand) var(--pourcentage);
-    padding: var(--grand) 0;
-}
+/* ---------- PARCOURS ---------- */
 
-.parcours-cartes{
+.parcours-cartes {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--grand);
     margin-top: var(--grand);
 }
 
-.card-parcours{
+.card-parcours {
     position: relative;
-    border: 1px solid rgba(77, 163, 255, 0.15);
+    border: var(--bordure);
+    box-shadow: var(--ombre-carte);
     border-radius: var(--arrondi);
     background-color: var(--fond-carte);
     padding: var(--grand) var(--moyen) var(--moyen);
 }
 
 /* badge date sur la bordure */
-.date{
+.date {
     position: absolute;
     top: -12px;
     left: var(--moyen);
     padding: 2px 12px;
     background-color: var(--fond);
+    border: var(--bordure);
     border-radius: var(--arrondi-petit);
-    font-family: var(--font-mono);
+    font-family: var(--mono);
     font-size: 14px;
-    color: var(--bleue);
+    color: var(--doree);
 }
 
-.ecole{
-    font-family: var(--font-titre);
+.ecole {
+    font-family: var(--titre);
     font-size: 20px;
     margin-bottom: var(--petit);
 }
 
 .spe,
-.lieu{
+.lieu {
     color: var(--texte-secondaire);
     font-size: 15px;
     line-height: 1.6;
 }
 
-@media (max-width: 900px){
-    .parcours-cartes{
-        grid-template-columns: 1fr;
-    }
-}
 
+/* ---------- CONTACT ---------- */
 
-.liens{
+.contact-ligne {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
     gap: var(--moyen);
-    margin-bottom: 0; /* le gap du parent gère l'espace */
+    margin-top: var(--grand);
 }
 
-.liens a{
+.liens {
+    display: flex;
+    gap: var(--moyen);
+}
+
+/* icônes en carrés arrondis */
+.liens a {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 52px;
     height: 52px;
+    border-radius: 12px;
     border: var(--bordure);
-    border-radius: 50%;
     background-color: var(--fond-carte);
     color: var(--couleur-texte);
-    transition: transform 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    transition: transform var(--transition), color var(--transition),
+                border-color var(--transition), box-shadow var(--transition);
 }
 
-.liens a:hover{
+.liens svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.liens a:hover {
     color: var(--doree);
     border-color: var(--doree);
     transform: translateY(-4px);
     box-shadow: 0 6px 16px rgba(212, 175, 55, 0.25);
 }
 
-.cv{
-    display: inline-block;
-    padding: 12px 28px;
-    border: 1px solid var(--doree);
-    border-radius: var(--arrondi-petit);
-    background-color: var(--doree);
-    color: var(--fond);
-    font-family: var(--font-mono);
-    font-weight: 500;
-    text-decoration: none;
-    transition: background-color 0.2s, color 0.2s;
-}
 
-.cv:hover{
-    background-color: transparent;
-    color: var(--doree);
-}
+/* ---------- FOOTER ---------- */
 
-
-.contact{
-    margin: var(--grand) var(--pourcentage);
-    padding: var(--grand) 0;
-}
-
-.contact-centre{
+footer {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: var(--grand);
-    margin-top: var(--grand);
+    gap: var(--moyen);
+    background-color: var(--fond);
+    padding: var(--moyen) var(--petit);
+    border-top: var(--bordure);
+}
+
+footer p {
+    margin: 0;
+    color: var(--texte-secondaire);
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+    .parcours-cartes {
+        grid-template-columns: 1fr;
+    }
+
+    .propos-comp {
+        flex-direction: column;
+    }
+
+    .propos {
+        max-width: none;
+    }
+
+    #nuage {
+        width: 100%;
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --pourcentage: 5%;
+        --grand: 30px;
+    }
+
+    header {
+        padding: var(--moyen);
+    }
+
+    .menu {
+        gap: var(--moyen);
+        font-size: 14px;
+    }
+
+    .competences {
+        grid-template-columns: 1fr;
+    }
+
+    .titre-page svg {
+        width: 40px;
+    }
 }
