@@ -507,6 +507,7 @@ header {
     border: var(--bordure);
     border-radius: var(--arrondi);
     width: fit-content;
+    cursor: pointer;
 }
 
 
@@ -547,6 +548,10 @@ header {
 .titre-comp {
     font-family: var(--titre);
     font-size: 20px;
+}
+
+.comp{
+    cursor: pointer;
 }
 
 
@@ -647,17 +652,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: var(--moyen);
     background-color: var(--fond);
     padding: var(--moyen) var(--petit);
     border-top: var(--bordure);
 }
-
-footer p {
-    margin: 0;
-    color: var(--texte-secondaire);
-}
-
 
 /* ---------- RESPONSIVE ---------- */
 
